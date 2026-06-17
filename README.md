@@ -50,20 +50,20 @@
 
 **The Well** is a cross-platform mobile app developed for a university occupational therapy course. Students log in, fill out a one-time commitment plan, then track a single daily habit over 8 weeks. Progress is visualised as a well slowly filling with water.
 
-A Blazor admin portal lets instructors provision student accounts, set course dates, and control which weekly content modules are visible. All course content — weekly modules, motivational messages — is authored in WordPress and pulled into the app via the REST API.
+A Blazor admin portal lets instructors provision student accounts, set course dates, and control which weekly content modules are visible. All course content; weekly modules, motivational messages. All authored in WordPress and pulled into the app via the REST API.
 
 ---
 
 ## Features
 
-- **Secure authentication** — JWT access tokens + rotating refresh tokens + BCrypt password hashing
-- **Forgot password** — email OTP flow with time-limited reset tokens
-- **Commitment plan** — 8-field intake form, submitted once and locked on completion
-- **Daily habit log** — entries editable within a 5-day window; colour-coded 8-week calendar
-- **Course content** — week-by-week modules from WordPress, unlocked by admin on a schedule
-- **Stats** — total completed days, current streak, well-fill percentage
-- **Graduation screen** — shown automatically when the course period ends
-- **Admin portal** — provision users, send welcome emails, set course dates, lock/unlock weeks
+- **Secure authentication** - JWT access tokens + rotating refresh tokens + BCrypt password hashing
+- **Forgot password** - email OTP flow with time limited reset tokens
+- **Commitment plan** - 8-field intake form, submitted once and locked on completion
+- **Daily habit log** - entries editable within a 5 day window; colour coded 8 week calendar
+- **Course content** - week-by-week modules from WordPress, unlocked by admin on a schedule
+- **Stats** - total completed days, current streak, well fill percentage
+- **Graduation screen** - shown automatically when the course period ends
+- **Admin portal** - provision users, send welcome emails, set course dates, lock/unlock weeks
 
 ---
 
@@ -86,12 +86,12 @@ A Blazor admin portal lets instructors provision student accounts, set course da
 
 ```
 TheWell.slnx
-├── TheWell.Core        — DTOs, entities, interfaces
-├── TheWell.Data        — EF Core DbContext, repositories
-├── TheWell.API         — ASP.NET Core Web API  (port 5139)
-├── TheWell.Admin       — Blazor Server admin portal
-├── TheWell.MAUI        — .NET MAUI mobile app
-└── TheWell.Tests       — Test project
+├── TheWell.Core        - DTOs, entities, interfaces
+├── TheWell.Data        - EF Core DbContext, repositories
+├── TheWell.API         - ASP.NET Core Web API  (port 5139)
+├── TheWell.Admin       - Blazor Server admin portal
+├── TheWell.MAUI        - .NET MAUI mobile app
+└── TheWell.Tests       - Test project
 ```
 
 ---
@@ -160,7 +160,7 @@ Open the URL printed in the terminal in your browser.
 
 Open `TheWell.slnx` in Visual Studio, set **TheWell.MAUI** as the startup project, and run targeting **Windows Machine** or an Android emulator.
 
-> **Android emulator:** the API is automatically reached at `http://10.0.2.2:5139/` — no manual config needed.
+> **Android emulator:** the API is automatically reached at `http://10.0.2.2:5139/` - no manual config needed.
 >
 > **Windows Firewall:** if the Android emulator can't reach the API, run this once in an admin PowerShell:
 > ```powershell
@@ -199,7 +199,7 @@ Login
 ## Calendar Rules
 
 - Course runs for **56 days** (8 weeks) starting from the configured Monday
-- Days are colour-coded: **Orange** = today, **Teal** = completed, **Pink** = editable (within 5 days), **Grey** = future/locked
+- Days are colour coded: **Orange** = today, **Teal** = completed, **Pink** = editable (within 5 days), **Grey** = future/locked
 - A log entry is only saved to the database when `IsCompleted = true`
 - Users can edit a log entry up to **5 days** after the actual date
 
